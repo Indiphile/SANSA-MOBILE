@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">LOGIN</string>
+    <string name="hint_email">Email</string>
+    <string name="Forgot_password">Forgot Password?</string>
+    <string name="dont_have_an_account">Don\'t have an Account?</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="signup">SignUp</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="app_logo_description">App logo</string>
+    <string name="confirm_password">Confirm Password </string>
+    <string name="username">Username</string>
+    <string name="already_have_an_account">Already Have an Account?</string>
+    <string name="logo">Logo</string>
+    <string name="register">Register</string>
+
 </resources>
