@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
+    tools:context=".activities.RegisterActivity"
     android:background="@drawable/b33">
 
     <EditText
@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/firstnameReg" />
 
     <EditText
-        android:id="@+id/emailReg"
+        android:id="@+id/emailLogin"
         android:layout_width="355dp"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lastnameReg" />
 
     <EditText
-        android:id="@+id/passwordReg"
+        android:id="@+id/passwordLogin"
         android:layout_width="355dp"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
@@ -93,9 +93,9 @@
         android:paddingBottom="10dp"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="@+id/emailReg"
-        app:layout_constraintStart_toStartOf="@+id/emailReg"
-        app:layout_constraintTop_toBottomOf="@+id/emailReg" />
+        app:layout_constraintEnd_toEndOf="@+id/emailLogin"
+        app:layout_constraintStart_toStartOf="@+id/emailLogin"
+        app:layout_constraintTop_toBottomOf="@+id/emailLogin" />
 
     <EditText
         android:id="@+id/conformPasswordReg"
@@ -114,9 +114,9 @@
         android:paddingBottom="10dp"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="@+id/passwordReg"
-        app:layout_constraintStart_toStartOf="@+id/passwordReg"
-        app:layout_constraintTop_toBottomOf="@+id/passwordReg" />
+        app:layout_constraintEnd_toEndOf="@+id/passwordLogin"
+        app:layout_constraintStart_toStartOf="@+id/passwordLogin"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
 
     <Button
         android:id="@+id/btnRegister"
