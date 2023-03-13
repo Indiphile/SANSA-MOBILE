@@ -9,7 +9,7 @@
 
 
     <EditText
-        android:id="@+id/inputPasswordLogin"
+        android:id="@+id/passwordReg"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
@@ -25,14 +25,14 @@
         android:paddingBottom="10dp"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="@+id/inputEmailLogin"
+        app:layout_constraintEnd_toEndOf="@+id/emailReg"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/inputEmailLogin"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmailLogin"
+        app:layout_constraintStart_toStartOf="@+id/emailReg"
+        app:layout_constraintTop_toBottomOf="@+id/emailReg"
         android:autofillHints="gsrsrsgg472545" />
 
     <EditText
-        android:id="@+id/inputEmailLogin"
+        android:id="@+id/emailReg"
         android:layout_width="355dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
@@ -60,14 +60,14 @@
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="24dp"
         android:text="@string/Forgot_password"
         android:textColor="@color/colorWhite"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/inputPasswordLogin"
-        app:layout_constraintTop_toBottomOf="@+id/inputPasswordLogin" />
+        app:layout_constraintEnd_toEndOf="@+id/passwordReg"
+        app:layout_constraintTop_toBottomOf="@+id/passwordReg" />
 
     <Button
         android:id="@+id/btnlogin"
@@ -80,7 +80,7 @@
         app:layout_constraintEnd_toStartOf="@+id/forgotPassword"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPasswordLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordReg" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
