@@ -16,5 +16,7 @@
     <string name="register">Register</string>
     <string name="firstname">First Name</string>
     <string name="lastname">Last Name</string>
+    <string name="splash">logo</string>
+    <string name="bg">bg</string>
 
 </resources>
