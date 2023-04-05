@@ -16,5 +16,18 @@
     <string name="register">Register</string>
     <string name="firstname">First Name</string>
     <string name="lastname">Last Name</string>
+    <string name="splash">logo</string>
+    <string name="bg">bg</string>
+    <string name="the_caption_title">caption_title</string>
+    <string name="farm_name">Farm name</string>
+    <string name="add_farm">Add Farm</string>
+    <string name="search_farm">Search Farm</string>
+    <string name="farm_logo">farm_logo</string>
+    <string name="farm_name2">Farm Name</string>
+    <string name="farm_location">Farm Location</string>
+    <string name="farm_location2">Farm Location</string>
+    <string name="search_location">Search Location</string>
+    <string name="_25">25</string>
+    <string name="condition">Condition</string>
 
 </resources>

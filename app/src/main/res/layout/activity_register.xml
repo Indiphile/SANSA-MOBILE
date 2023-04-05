@@ -8,7 +8,7 @@
     android:background="@drawable/b33">
 
     <EditText
-        android:id="@+id/firstnameReg"
+        android:id="@+id/farmNameSearch_txt"
         android:layout_width="355dp"
         android:layout_height="55dp"
         android:layout_marginStart="40dp"
@@ -49,9 +49,9 @@
         android:paddingBottom="10dp"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="@+id/firstnameReg"
-        app:layout_constraintStart_toStartOf="@+id/firstnameReg"
-        app:layout_constraintTop_toBottomOf="@+id/firstnameReg" />
+        app:layout_constraintEnd_toEndOf="@+id/farmNameSearch_txt"
+        app:layout_constraintStart_toStartOf="@+id/farmNameSearch_txt"
+        app:layout_constraintTop_toBottomOf="@+id/farmNameSearch_txt" />
 
     <EditText
         android:id="@+id/emailLogin"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lastnameReg" />
 
     <EditText
-        android:id="@+id/passwordLogin"
+        android:id="@+id/search_location_editxt"
         android:layout_width="355dp"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
@@ -114,9 +114,9 @@
         android:paddingBottom="10dp"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="@+id/passwordLogin"
-        app:layout_constraintStart_toStartOf="@+id/passwordLogin"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
+        app:layout_constraintEnd_toEndOf="@+id/search_location_editxt"
+        app:layout_constraintStart_toStartOf="@+id/search_location_editxt"
+        app:layout_constraintTop_toBottomOf="@+id/search_location_editxt" />
 
     <Button
         android:id="@+id/btnRegister"

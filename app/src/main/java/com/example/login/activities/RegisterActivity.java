@@ -46,10 +46,10 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     void initViews() {
-        firstname = findViewById(R.id.firstnameReg);
+        firstname = findViewById(R.id.farmNameSearch_txt);
         lastname = findViewById(R.id.lastnameReg);
         emailInput = findViewById(R.id.emailLogin);
-        pwd = findViewById(R.id.passwordLogin);
+        pwd = findViewById(R.id.search_location_editxt);
         pwd2 = findViewById(R.id.conformPasswordReg);
 
         register = (Button) findViewById(R.id.btnRegister);
@@ -99,7 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Boolean insert = databaseHelper.insertData(name, surname, email, password);
                     if(insert == true){
                         Toast.makeText(RegisterActivity.this, "Signup Successfully!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(),AddFarmActivity.class);
                         startActivity(intent);
 
                     }else{
