@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
     void initViews() {
         username = findViewById(R.id.emailLogin);
-        pwd = findViewById(R.id.passwordLogin);
+        pwd = findViewById(R.id.search_location_editxt);
         loginBtn = findViewById(R.id.btnlogin);
         goToRegister = findViewById(R.id.goToReg);
     }

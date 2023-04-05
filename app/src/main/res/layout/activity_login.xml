@@ -9,7 +9,7 @@
 
 
     <EditText
-        android:id="@+id/passwordLogin"
+        android:id="@+id/search_location_editxt"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
@@ -66,8 +66,8 @@
         android:textColor="@color/colorWhite"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/passwordLogin"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
+        app:layout_constraintEnd_toEndOf="@+id/search_location_editxt"
+        app:layout_constraintTop_toBottomOf="@+id/search_location_editxt" />
 
     <Button
         android:id="@+id/btnlogin"
@@ -80,7 +80,7 @@
         app:layout_constraintEnd_toStartOf="@+id/forgotPassword"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/search_location_editxt" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

@@ -11,15 +11,16 @@ import androidx.annotation.Nullable;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String databaseName = "SignLog.db";
+    public static final String databaseName = "storage.db";
 
     public DatabaseHelper(@Nullable Context context) {
-        super(context, "SignLog.db", null, 1);
+        super(context, databaseName, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase MyDatabase) {
-        MyDatabase.execSQL("create Table users(name TEXT,surname TEXT,email TEXT primary key, password TEXT)");
+        MyDatabase.execSQL("create Table users(user_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,surname TEXT,email TEXT UNIQUE , password TEXT, farm_id INTEGER,FOREIGN KEY (farm_id) REFERENCES farms(farm_id))");
+        MyDatabase.execSQL("CREATE TABLE farms(farm_id INTEGER PRIMARY KEY AUTOINCREMENT,farm_name TEXT)");
     }
 
     @Override
@@ -35,31 +36,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("email", email);
         contentValues.put("password", password);
         long result = MyDatabase.insert("users", null, contentValues);
-        if (result == -1) {
-            return false;
-        } else {
-            return true;
-        }
+        return result != -1;
+    }
+
+    public  boolean insertFarmName(String farm_name){
+        SQLiteDatabase MyDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("farm_name", farm_name);
+
+        long result = MyDatabase.insert("users", null, contentValues);
+        return result != -1;
+
+
     }
 
     public Boolean checkEmail(String email) {
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
         Cursor cursor = MyDatabase.rawQuery("Select * from users where email = ?", new String[]{email});
-        if (cursor.getCount() > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return cursor.getCount() > 0;
     }
 
     public Boolean checkEmailPassword(String email, String password) {
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
         Cursor cursor = MyDatabase.rawQuery("Select * from users where email = ? and password = ?", new String[]{email, password});
-        if (cursor.getCount() > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return cursor.getCount() > 0;
     }
 }
 
