@@ -11,13 +11,13 @@
         android:id="@+id/imageView2"
         android:layout_width="240dp"
         android:layout_height="120dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logonew22"
-        android:contentDescription="@string/logo" />
+        app:srcCompat="@drawable/logonew22" />
 
 
     <EditText
@@ -46,7 +46,7 @@
         android:id="@+id/searchFarm_btn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/btn_bg"
         android:text="@string/search_farm"
         app:icon="?android:attr/actionModeWebSearchDrawable"
@@ -60,21 +60,36 @@
         android:id="@+id/addFarm_btn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/btn_bg"
         android:text="@string/add_farm"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listFarms_recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/listFarms_recyclerView"
+        app:layout_constraintVertical_bias="0.188" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listFarms_recyclerView"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/farm_output_tv" />
+
+    <TextView
+        android:id="@+id/farm_output_tv"
+        android:layout_width="355dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/tv_bg"
+        android:ems="10"
+        android:hint="Farm list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchFarm_btn" />

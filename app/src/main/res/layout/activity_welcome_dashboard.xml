@@ -42,7 +42,7 @@
         app:layout_constraintTop_toTopOf="@+id/my_tablayout">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/practiceCard"
+            android:id="@+id/crop_cv"
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_margin="8dp"
@@ -51,7 +51,7 @@
             android:elevation="12dp"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/white"
+            app:cardBackgroundColor="@color/blue_500"
             app:cardCornerRadius="8dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -59,7 +59,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/image_view20"
+                    android:id="@+id/crop_imgV"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:src="@drawable/crop4"
@@ -75,16 +75,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="CROPS"
+                    android:text="CROP Monitoring"
                     android:textAllCaps="true"
-                    android:textColor="@color/blue_500"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/image_view20" />
+                    app:layout_constraintTop_toBottomOf="@+id/crop_imgV" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -96,7 +96,7 @@
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:weightSum="2"
@@ -106,7 +106,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/settingsCard"
+            android:id="@+id/weather_coditions_cv"
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_margin="8dp"
@@ -115,7 +115,7 @@
             android:elevation="12dp"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/colorWhite"
+            app:cardBackgroundColor="@color/blue_500"
             app:cardCornerRadius="8dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -126,13 +126,12 @@
                     android:id="@+id/weather_imgV"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
+                    android:contentDescription="weather card"
                     android:src="@drawable/w1"
-                    app:layout_constraintBottom_toTopOf="@+id/textView4"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:contentDescription="weather card" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView4"
@@ -141,13 +140,14 @@
                     android:gravity="center"
                     android:text="Weather Forecast"
                     android:textAllCaps="true"
-                    android:textColor="@color/blue_500"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weather_imgV" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

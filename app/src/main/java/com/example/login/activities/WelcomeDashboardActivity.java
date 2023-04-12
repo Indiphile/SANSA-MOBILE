@@ -26,6 +26,7 @@ public class WelcomeDashboardActivity extends AppCompatActivity {
 
     Button loginBtn;
     ImageView weatherServiceImgVBtn;
+    ImageView cropMonitorImgVBtn;
 
 
     @Override
@@ -33,6 +34,7 @@ public class WelcomeDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_dashboard);
 
+        cropMonitorImgVBtn = findViewById(R.id.crop_imgV);
         loginBtn = findViewById(R.id.welcome_login_btn);
         weatherServiceImgVBtn = findViewById(R.id.weather_imgV);
 
@@ -59,6 +61,13 @@ public class WelcomeDashboardActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(page, true);
 
 
+        cropMonitorImgVBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(WelcomeDashboardActivity.this, AddFarmActivity.class));
+            }
+        });
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +82,7 @@ public class WelcomeDashboardActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
     public class The_slide_timer extends TimerTask {
