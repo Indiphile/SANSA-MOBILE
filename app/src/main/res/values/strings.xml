@@ -29,5 +29,12 @@
     <string name="search_location">Search Location</string>
     <string name="_25">25</string>
     <string name="condition">Condition</string>
+    <string name="humidity">Humidity</string>
+    <string name="pretoria">Pretoria</string>
+    <string name="humidity2">humidity</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="icon2">icon2</string>
+    <string name="wind">wind</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiaW5kaXBoaWxlIiwiYSI6ImNsZjFndmh1MjA4YjQzcW55Zmh0NWM3YTEifQ.DUUc7ZAEMugLng_3E538QQ</string>
 
 </resources>

@@ -2,8 +2,6 @@ package com.example.login.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.Color;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -20,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.login.R;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,13 +36,16 @@ public class WeatherServiceActivity extends AppCompatActivity {
 
     TextView results;
 
+    TextView humidityTv;
+    TextView windSpeed;
+
 
     LocationManager locationManager;
     int PERMISSION_CODE = 1;
 
     private final String url = "https://api.openweathermap.org/data/2.5/weather";
     private final String appid = "e5bbdd4f3fb3cd343613c33ed133f982";
-    DecimalFormat df = new DecimalFormat("#.##");
+    DecimalFormat df = new DecimalFormat("#.#");
 
 
     @Override
@@ -53,10 +55,13 @@ public class WeatherServiceActivity extends AppCompatActivity {
 
         searchLocationEditText = findViewById(R.id.search_location_editxt);
         searchImgBtn = findViewById(R.id.search_imgv_btn);
-        averageTemp = findViewById(R.id.average_temp_txt);
+        averageTemp = findViewById(R.id.average_temp_tv);
         weatherConditionImg = findViewById(R.id.condition_imgV1);
-        weatherConditionTxt = findViewById(R.id.tv_condition);
-        results = findViewById(R.id.output_tv);
+        weatherConditionTxt = findViewById(R.id.condition_tv);
+
+        humidityTv = findViewById(R.id.humidity_tv);
+        windSpeed = findViewById(R.id.wind_speed_tv);
+
 
         searchImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,34 +86,41 @@ public class WeatherServiceActivity extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, tempUrl, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    String output = "";
+
                     try {
                         JSONObject jsonResponse = new JSONObject(response);
                         JSONArray jsonArray = jsonResponse.getJSONArray("weather");
                         JSONObject jsonObjectWeather = jsonArray.getJSONObject(0);
                         String description = jsonObjectWeather.getString("description");
+                        String iconCondition = jsonObjectWeather.getString("icon");
+                        String iconUrl = "https://openweathermap.org/img/w/" + iconCondition + ".png";
+
+                        Object context = null;
+                       // Picasso.with(context).load(iconUrl).into(weatherConditionImg);
+                        Picasso.get().load(iconUrl).into(weatherConditionImg);
+
                         JSONObject jsonObjectMain = jsonResponse.getJSONObject("main");
                         double temp = jsonObjectMain.getDouble("temp") - 273.15;
-                        double feelsLike = jsonObjectMain.getDouble("feels_like") - 273.15;
-                        float pressure = jsonObjectMain.getInt("pressure");
+                        //double feelsLike = jsonObjectMain.getDouble("feels_like") - 273.15;
+                        //float pressure = jsonObjectMain.getInt("pressure");
                         int humidity = jsonObjectMain.getInt("humidity");
                         JSONObject jsonObjectWind = jsonResponse.getJSONObject("wind");
-                        String wind = jsonObjectWind.getString("speed");
+                        double wind = jsonObjectWind.getDouble("speed") * 3.6;
                         JSONObject jsonObjectClouds = jsonResponse.getJSONObject("clouds");
-                        String clouds = jsonObjectClouds.getString("all");
+                        //String clouds = jsonObjectClouds.getString("all");
                         JSONObject jsonObjectSys = jsonResponse.getJSONObject("sys");
                         String countryName = jsonObjectSys.getString("country");
                         String cityName = jsonResponse.getString("name");
-                        results.setTextColor(Color.rgb(68, 134, 199));
-                        output += "Current weather of " + cityName + " (" + countryName + ")"
-                                + "\n Temp: " + df.format(temp) + " °C"
-                                + "\n Feels Like: " + df.format(feelsLike) + " °C"
-                                + "\n Humidity: " + humidity + "%"
-                                + "\n Description: " + description
-                                + "\n Wind Speed: " + wind + "m/s (meters per second)"
-                                + "\n Cloudiness: " + clouds + "%"
-                                + "\n Pressure: " + pressure + " hPa";
-                        results.setText(output);
+
+                        String tempFormatted = (df.format(temp));
+                        averageTemp.setText(tempFormatted + "°C");
+
+                        weatherConditionTxt.setText(description);
+
+                        humidityTv.setText(humidity + "%");
+
+                        String windFormatted = df.format(wind);
+                        windSpeed.setText(windFormatted + " Km/h");
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
